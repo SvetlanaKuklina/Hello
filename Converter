@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Converter  {
+
+    private static final double EXCHANGE_RATE = 75.0; //Задаём значение константы где доллар = 75.0 с типом double
+
+    public static void main(String[] args) {
+        System.out.println("Введите сумму в рублях :");
+        double rubles = new Scanner(System.in).nextDouble();
+        double dollars = rubles / EXCHANGE_RATE;
+        System.out.printf("%.2f рублей = %.2f долларов%n", rubles, dollars);
+
+
+
+    }
+}

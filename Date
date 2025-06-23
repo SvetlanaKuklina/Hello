@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Date {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите день: ");
+        int day = scanner.nextInt();
+
+        System.out.print("Введите месяц: ");
+        int month = scanner.nextInt();
+
+        System.out.print("Введите год: ");
+        int year = scanner.nextInt();
+
+        if (isValidDate(day, month, year)) {
+            System.out.println("Дата " + day + "/" + month + "/" + year + " корректна.");
+        } else {
+            System.out.println("Дата " + day + "/" + month + "/" + year + " некорректна.");
+        }
+
+        scanner.close();
+    }
+
+    public static boolean isValidDate(int day, int month, int year) {
+        // Проверка года
+        if (year < 1) {
+            return false; // Год не может быть меньше 1
+        }
+
+        // Проверка месяца
+        if (month < 1 || month > 12) {
+            return false; // Месяц должен быть от 1 до 12
+        }
+
+        // Определение количества дней в месяце
+        int daysInMonth;
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                daysInMonth = 31; // Январь, Март, Май, Июль, Август, Октябрь, Декабрь
+                break;
+            case 4: case 6: case 9: case 11:
+                daysInMonth = 30; // Апрель, Июнь, Сентябрь, Ноябрь
+                break;
+            case 2:
+                // Февраль - проверка на високосный год
+                if (isLeapYear(year)) {
+                    daysInMonth = 29; // Високосный год
+                } else {
+                    daysInMonth = 28; // Обычный год
+                }
+                break;
+            default:
+                return false; // На всякий случай
+        }
+
+        // Проверка дня
+        return day >= 1 && day <= daysInMonth;
+    }
+
+    public static boolean isLeapYear(int year) {
+        // Проверка на високосный год
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+}

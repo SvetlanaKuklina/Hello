@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+
+        System.out.print("Введите строку: "); //Выводим строку в консоль
+        String input = new Scanner(System.in).nextLine(); //Считываем введенную пользователем строку и присваиваем значение переменной myString
+        String reversed = reverseString(input); // С помощью метода reverseString переворачиваем введенную строку из значения в переменной input и присваиваем значение переменной reversed
+        System.out.println("Перевернутая строка:" + reversed);
+    }
+    // Метод для переворачивания строки
+    public static String reverseString(String str) {
+        StringBuilder reversed = new StringBuilder(str); // Создаем StringBuilder с исходной строкой
+        return reversed.reverse().toString(); // Переворачиваем и возвращаем результат в виде строки
+    }
+}

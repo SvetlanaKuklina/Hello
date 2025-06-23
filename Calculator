@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+    System.out.println("Введите число:"); //Считываем число введенное пользователем
+    double num1 = new Scanner(System.in).nextDouble(); //Присваиваем переменной значение введенное пользователем и считываем её
+
+    System.out.println("Выберите операцию: +, -, *, /");
+    char operation = new Scanner(System.in).next().charAt(0); //Создаём переменную и присваиваем значение введенное пользователем
+
+    System.out.println("Введите число:"); //Считываем число введенное пользователем
+    double num2 = new Scanner(System.in).nextDouble();
+
+
+    double result; //Выводим результат
+
+    switch (operation) { //Оператор, который помогает выбрать определённый блок кода
+        case '+': //Позволяет создать один из вариаций блока кода
+            result = num1 + num2;
+            System.out.println("Результат:" + result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            System.out.println("Результат:" + result);
+            break;
+
+        case '*':
+            result = num1 * num2;
+            System.out.println("Результат:" + result);
+            break;
+
+        case '/':
+            result = num1 % num2;
+            System.out.println("Результат:" + result);
+            break;
+    }
+}
+}

@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class EvenOddChecker {
+
+    public static void main(String[] args) {
+        System.out.println("Введите число:");//Выводим строку в консоль
+        int num = new Scanner(System.in).nextInt(); //Считываем введенную пользователем строку и присваиваем значение переменной num
+        if (num % 2 == 0) { //Если введенное число делится на 2 без остатка, а значит остаток равен нулю, то число четное
+            System.out.println("Число чётное");}
+            else { //Если обратное, то нечетное
+                System.out.println("Число нечётное"); 
+        }
+
+    }
+}
